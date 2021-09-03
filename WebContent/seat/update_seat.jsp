@@ -217,8 +217,8 @@ div button a.backlogin {
 						<div class="collapse" id="collapseView"
 							aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
 							<nav class="sb-sidenav-menu-nested nav">
-								<a class="nav-link" href="res_submit.jsp">周邊景點</a> 
-								<a class="nav-link" href="resbooking_management.jsp">一日景點</a>
+								<a class="nav-link" href="<%=request.getContextPath()%>/nearby/nearbymanage.jsp">周邊景點</a>
+								<a class="nav-link" href="<%=request.getContextPath()%>/oneday/onedaymanage.html">一日景點</a>
 							</nav>
 						</div>
 						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
