@@ -193,9 +193,10 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ªð¦^</button>
-                                <button type="button" class="btn btn-primary">
-                                    <a class="backlogin" href="login.html">µn¥X</a>
-                                </button>
+                                <form method="post" action="<%=request.getContextPath()%>/employee/EmployeeLogout">
+							<input type="submit" class="btn btn-primary" value="µn¥X">
+							</button>
+								</form>
                             </div>
                         </div>
                     </div>

@@ -6,15 +6,15 @@
 <%@ page import="web.dish.vo.*"%>
 
 <%
-// 	response.setHeader("Cache-Control","no-store"); //HTTP 1.1
-// 	response.setHeader("Pragma","no-cache"); //HTTP 1.0
-// 	response.setDateHeader ("Expires", 0);
+	response.setHeader("Cache-Control","no-store"); //HTTP 1.1
+	response.setHeader("Pragma","no-cache"); //HTTP 1.0
+	response.setDateHeader ("Expires", 0);
 	
-// 	Object obj =session.getAttribute("empVO");
-// 	if(obj==null){
-// 		response.sendRedirect(request.getContextPath()+"/employee/login.jsp");
-// 		return;
-// 	}
+	Object obj =session.getAttribute("empVO");
+	if(obj==null){
+		response.sendRedirect(request.getContextPath()+"/employee/login.jsp");
+		return;
+	}
 
 	DishService dishSvc = new DishServiceImpl();
 	List<Dish> list = dishSvc.getAll();
@@ -166,9 +166,9 @@ div button a.backlogin {
                         <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne"
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                            	<a class="nav-link" href="employee_data.jsp">個人資料</a>
-                                <a class="nav-link" href="employee_changedata.jsp">個人資料修改</a>
-                                <a class="nav-link" href="employee_management.jsp">員工管理</a>
+                            	<a class="nav-link" href="<%=request.getContextPath()%>/employee/employee_data.jsp">個人資料</a>
+                                <a class="nav-link" href="<%=request.getContextPath()%>/employee/employee_changedata.jsp">個人資料修改</a>
+                                <a class="nav-link" href="<%=request.getContextPath()%>/employee/employee_management.jsp">員工管理</a>
                             </nav>
                         </div>
 						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
@@ -278,9 +278,10 @@ div button a.backlogin {
 						<div class="back modal-footer">
 							<button type="button" class="btn btn-secondary"
 								data-bs-dismiss="modal">返回</button>
-							<button type="button" class="btn btn-primary">
-								<a class="backlogin" href="login.html">登出</a>
+							<form method="post" action="<%=request.getContextPath()%>/employee/EmployeeLogout">
+							<input type="submit" class="btn btn-primary" value="登出">
 							</button>
+								</form>
 						</div>
 					</div>
 				</div>
@@ -292,7 +293,7 @@ div button a.backlogin {
 						<tr>
 							<td>
 								 <h4>所有菜色列表 - listAllDish.jsp</h4>
-								 <h4><a href="listAllDish.jsp"><img src="<%=request.getContextPath()%>/images/logo3.png" width="100" height="32" border="0">回首頁</a></h4>
+								 <h4><a href="listAllDish.jsp">回首頁</a></h4>
 							</td>
 						</tr>
 					</table>
@@ -366,29 +367,6 @@ div button a.backlogin {
 		crossorigin="anonymous"></script>
 	<script src="<%=request.getContextPath()%>/dish/js/scripts.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script>
-		$(window).on("load", function() {
-
-			$(function() {
-				$("input[type='button']").click(function() {
-					$("input[name='test']:checked").each(function() {
-						n = $(this).parents("tr").index();
-						$("table#test_table").find("tr:eq(" + n + ")").remove()
-					});
-				});
-			});
-			$("#flexCheckDefault").click(function() {
-				if ($("#flexCheckDefault").prop("checked")) {
-					$("input[name='test']").each(function() {
-						$(this).prop("checked", true);
-					})
-				} else {
-					$("input[name='test']").each(function() {
-						$(this).prop("checked", false);
-					})
-				}
-			});
-		});
-	</script>
+	
 </body>
 </html>
