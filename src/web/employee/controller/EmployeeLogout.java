@@ -24,10 +24,11 @@ public class EmployeeLogout extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         res.addHeader("Access-Control-Allow-Origin", "*");
         String xxx = req.getParameter("action");
-        System.out.println(xxx);
+        System.out.println("xxxx"+xxx);
         HttpSession session = req.getSession();    
         
     	session.removeAttribute("empVO");
+    	session.removeAttribute("location");
     	
     	String url ="http://localhost:8081/Hotel_Team5_TFA102/employee/login.jsp";    
     	res.sendRedirect(url);

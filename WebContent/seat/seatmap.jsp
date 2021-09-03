@@ -108,86 +108,112 @@
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>            
         </nav>
         <div id="layoutSidenav">
-            <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu">
-                        <div class="nav">
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseMembers" aria-expanded="false" aria-controls="collapseMembers">
-                                <div class="sb-nav-link-icon"></div>
-                                會員系統
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseMembers" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="<%=request.getContextPath()%>/employee/employee_data.jsp">個人資料</a>
-                                <a class="nav-link" href="<%=request.getContextPath()%>/employee/employee_changedata.jsp">個人資料修改</a>
-                                <a class="nav-link" href="<%=request.getContextPath()%>/employee/employee_management.jsp">員工管理</a>
-                                </nav>
-                            </div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"></div>
-                               客房管理
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="room_submit.jsp">客房上架</a> <a
-									class="nav-link" href="resbooking_management.jsp">客房管理</a>
-                                </nav>
-                            </div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"></div>
-                                場地管理
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link" href="place_submit.jsp">場地上架</a> <a
-									class="nav-link" href="placebooking_management.jsp">場地管理</a>
-                                </nav>
-                            </div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseRestaurant" aria-expanded="false" aria-controls="collapseRestaurant">
-                                <div class="sb-nav-link-icon"></div>
-                                餐廳管理
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseRestaurant" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="<%=request.getContextPath()%>/dish/listAllDish.jsp">菜餚管理</a> 
+			<div id="layoutSidenav_nav">
+				<nav class="sb-sidenav accordion sb-sidenav-dark"
+					id="sidenavAccordion">
+					<div class="sb-sidenav-menu">
+						<div class="nav">
+							<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+	                            data-bs-target="#collapseLayouts2" aria-expanded="false" aria-controls="collapseLayouts">
+	                            <div class="sb-nav-link-icon"></div>
+	                            員工管理
+	                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+	                        </a>
+	                        <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne"
+	                            data-bs-parent="#sidenavAccordion">
+	                            <nav class="sb-sidenav-menu-nested nav">
+	                            	<a class="nav-link" href="<%=request.getContextPath()%>/employee/employee_data.jsp">個人資料</a>
+	                                <a class="nav-link" href="<%=request.getContextPath()%>/employee/employee_changedata.jsp">個人資料修改</a>
+	                                <a class="nav-link" href="<%=request.getContextPath()%>/employee/employee_management.jsp">員工管理</a>
+	                            </nav>
+	                        </div>
+							<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+								data-bs-target="#collapseLayouts" aria-expanded="false"
+								aria-controls="collapseLayouts">
+								<div class="sb-nav-link-icon"></div> 客房管理
+								<div class="sb-sidenav-collapse-arrow">
+									<i class="fas fa-angle-down"></i>
+								</div>
+							</a>
+							<div class="collapse" id="collapseLayouts"
+								aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+								<nav class="sb-sidenav-menu-nested nav">
+									<a class="nav-link" href="room_submit.jsp">客房上架</a> <a
+										class="nav-link" href="resbooking_management.jsp">客房管理</a>
+								</nav>
+							</div>
+							<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+								data-bs-target="#collapsePages" aria-expanded="false"
+								aria-controls="collapsePages">
+								<div class="sb-nav-link-icon"></div> 場地管理
+								<div class="sb-sidenav-collapse-arrow">
+									<i class="fas fa-angle-down"></i>
+								</div>
+							</a>
+							<div class="collapse" id="collapsePages"
+								aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+								<nav class="sb-sidenav-menu-nested nav accordion"
+									id="sidenavAccordionPages">
+									<a class="nav-link" href="place_submit.jsp">場地上架</a> <a
+										class="nav-link" href="placebooking_management.jsp">場地管理</a>
+								</nav>
+							</div>
+							<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+								data-bs-target="#collapseRestaurant" aria-expanded="false"
+								aria-controls="collapseRestaurant">
+								<div class="sb-nav-link-icon"></div> 餐廳管理
+								<div class="sb-sidenav-collapse-arrow">
+									<i class="fas fa-angle-down"></i>
+								</div>
+							</a>
+							<div class="collapse" id="collapseRestaurant"
+								aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+								<nav class="sb-sidenav-menu-nested nav">
+									<a class="nav-link" href="<%=request.getContextPath()%>/dish/listAllDish.jsp">菜餚管理</a> 
 									<a class="nav-link" href="<%=request.getContextPath()%>/seat/listAllSeat.jsp">座位管理</a>
 									<a class="nav-link" href="<%=request.getContextPath()%>/seat/seatmap.jsp">餐廳平面圖</a>
-                                </nav>
-                            </div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseSetting" aria-expanded="false" aria-controls="collapseSetting">
-                                <div class="sb-nav-link-icon"></div>
-                                相關設定
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseSetting" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link" href="<%=request.getContextPath()%>/nearby/nearbymanage.jsp">周邊景點</a>
+										
+								</nav>
+							</div>
+							<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+								data-bs-target="#collapseView" aria-expanded="false"
+								aria-controls="collapseRestaurant">
+								<div class="sb-nav-link-icon"></div> 相關設定
+								<div class="sb-sidenav-collapse-arrow">
+									<i class="fas fa-angle-down"></i>
+								</div>
+							</a>
+							<div class="collapse" id="collapseView"
+								aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+								<nav class="sb-sidenav-menu-nested nav">
+									<a class="nav-link" href="<%=request.getContextPath()%>/nearby/nearbymanage.jsp">周邊景點</a>
 									<a class="nav-link" href="<%=request.getContextPath()%>/oneday/onedaymanage.html">一日景點</a>
-                                </nav>
-                            </div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLogout" aria-expanded="false" aria-controls="collapseLogout">
-                                <div class="sb-nav-link-icon"></div>
-                                登出
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseLogout" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link" href="error.html">切換使用者</a>
-                                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#logout">登出</a>
-                                </nav>
-                            </div>                           
-                        </div>
-                    </div>
-                    <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        DreamHoliday Team5
-                    </div>
-                </nav>
-            </div>
+								</nav>
+							</div>
+							<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+								data-bs-target="#collapseLogout" aria-expanded="false"
+								aria-controls="collapseLogout">
+								<div class="sb-nav-link-icon"></div> 登出
+								<div class="sb-sidenav-collapse-arrow">
+									<i class="fas fa-angle-down"></i>
+								</div>
+							</a>
+							<div class="collapse" id="collapseLogout"
+								aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+								<nav class="sb-sidenav-menu-nested nav accordion"
+									id="sidenavAccordionPages">
+									<a class="nav-link" href="login.jsp" data-bs-toggle="modal"
+										data-bs-target="#logout">登出</a>
+								</nav>
+							</div>
+						</div>
+					</div>
+					<div class="sb-sidenav-footer">
+						<div class="small">Logged in as:</div>
+						DreamHoliday Team5
+					</div>
+				</nav>
+			</div>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">

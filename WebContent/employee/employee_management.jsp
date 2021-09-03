@@ -10,10 +10,9 @@ response.setDateHeader ("Expires", 0);
 
 Object obj =session.getAttribute("empVO");
 if(obj==null){
- 
- response.sendRedirect(request.getContextPath()+"/employee/login.jsp");
- return;
- 
+	request.getSession().setAttribute("location", request.getRequestURI());
+	response.sendRedirect(request.getContextPath()+"/employee/login.jsp");
+	return;
 }
 EmployeeVO empVO = (EmployeeVO) obj;
 session.setAttribute("empVO", empVO);

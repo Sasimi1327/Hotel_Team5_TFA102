@@ -246,11 +246,14 @@ div button a.backlogin {
 			</nav>
 		</div>
 		<div id="layoutSidenav_content">
-			<!-- <main>
+			<main>
                 <div class="container-fluid px-4">
-                    <h2 class="mt-4">訂房作業 - 訂單管理</h2>
+                    <h1 class="mt-4">歡迎使用夢想假期飯店後台管理系統</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">DreamHoliday Admin</li>
+                    </ol>                   
                 </div>
-            </main> -->
+            </main>
 			<!-- Modal -->
 			<div class="modal fade" id="logout" tabindex="-1"
 				aria-labelledby="logoutLabel" aria-hidden="true">
@@ -280,7 +283,7 @@ div button a.backlogin {
 						<tr>
 							<td>
 								 <h4>座位資料修改 - update_seat.jsp</h4>
-								 <h4><a href="listAllSeat.jsp"><img src="<%=request.getContextPath()%>/images/logo3.png" width="100" height="32" border="0">回首頁</a></h4>
+								 <h4><a href="listAllSeat.jsp">回首頁</a></h4>
 							</td>
 						</tr>
 					</table>

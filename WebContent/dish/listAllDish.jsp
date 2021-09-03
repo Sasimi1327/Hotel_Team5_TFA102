@@ -264,11 +264,14 @@ div button a.backlogin {
 			</nav>
 		</div>
 		<div id="layoutSidenav_content">
-			<!-- <main>
+			<main>
                 <div class="container-fluid px-4">
-                    <h2 class="mt-4">訂房作業 - 訂單管理</h2>
+                    <h1 class="mt-4">歡迎使用夢想假期飯店後台管理系統</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">DreamHoliday Admin</li>
+                    </ol>                   
                 </div>
-            </main> -->
+            </main>
 			<!-- Modal -->
 			<div class="modal fade" id="logout" tabindex="-1"
 				aria-labelledby="logoutLabel" aria-hidden="true">

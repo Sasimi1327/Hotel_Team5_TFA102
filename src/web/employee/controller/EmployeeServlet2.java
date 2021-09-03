@@ -80,11 +80,22 @@ public class EmployeeServlet2 extends HttpServlet {
 					failureView.forward(req, res);
 					return;//µ{¦¡¤¤Â_
 				};
-				
 				req.getSession().setAttribute("empVO", empVO);
-				String url = "/employee/select_page.jsp";
-				RequestDispatcher successView = req.getRequestDispatcher(url);
-				successView.forward(req, res);
+				String locationPath = (String) req.getSession().getAttribute("location");
+				
+				if (locationPath != null) {
+					locationPath = (locationPath.length() == 0) ? req.getContextPath() : locationPath;
+					
+					res.sendRedirect(res.encodeRedirectURL(locationPath));
+					System.out.println("locationPath"+locationPath);
+					return;
+				} else {
+					String url = "/employee/select_page.jsp";
+					res.sendRedirect(req.getContextPath()+url);
+				}
+//				String url = "/employee/select_page.jsp";
+//				RequestDispatcher successView = req.getRequestDispatcher(url);
+//				successView.forward(req, res);
 			} catch (ServletException e) {
 				e.printStackTrace();
 			} catch(IOException e) {
@@ -94,7 +105,7 @@ public class EmployeeServlet2 extends HttpServlet {
 			
 			
 		}
-		doGet(req, res);
+//		doGet(req, res);
 	}
 
 }
