@@ -487,7 +487,7 @@ div.main2 {
 	</div>
 	<div class="title container-fluid">
 		<div class="row justify-content-center">
-			<img class="titlelogo" src="/DreamHolidayServlet/images/logo3.png"
+			<img class="titlelogo" src="<%=request.getContextPath() %>/images/logo3.png"
 				alt="">
 		</div>
 		<h1 class="row justify-content-center">線上訂位查詢</h1>

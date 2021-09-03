@@ -11,15 +11,15 @@
 <%@ page import="web.seat.vo.*"%>
 
 <%
-//	response.setHeader("Cache-Control","no-store"); //HTTP 1.1
-//	response.setHeader("Pragma","no-cache"); //HTTP 1.0
-//	response.setDateHeader ("Expires", 0);
+	response.setHeader("Cache-Control","no-store"); //HTTP 1.1
+	response.setHeader("Pragma","no-cache"); //HTTP 1.0
+	response.setDateHeader ("Expires", 0);
 
-//	Object obj =session.getAttribute("empVO");
-//	if(obj==null){
-//		response.sendRedirect(request.getContextPath()+"/employee/login.jsp");
-//		return;
-//	}
+	Object obj =session.getAttribute("empVO");
+	if(obj==null){
+		response.sendRedirect(request.getContextPath()+"/employee/login.jsp");
+		return;
+	}
 
 	SeatService seatSvc = new SeatServiceImpl();
 	List<Seat> list = seatSvc.getSeatAllFromRedis();
@@ -119,29 +119,31 @@
                             </a>
                             <div class="collapse" id="collapseMembers" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="">會員查詢</a>
-                                    <a class="nav-link" href="">修改資料</a>
+                                    <a class="nav-link" href="<%=request.getContextPath()%>/employee/employee_data.jsp">個人資料</a>
+                                <a class="nav-link" href="<%=request.getContextPath()%>/employee/employee_changedata.jsp">個人資料修改</a>
+                                <a class="nav-link" href="<%=request.getContextPath()%>/employee/employee_management.jsp">員工管理</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"></div>
-                                訂房作業
+                               客房管理
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="roombooking.html">訂單管理</a>
-                                    <a class="nav-link" href="roommap.html">樓層平面圖</a>
+                                    <a class="nav-link" href="room_submit.jsp">客房上架</a> <a
+									class="nav-link" href="resbooking_management.jsp">客房管理</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"></div>
-                                場地租借
+                                場地管理
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link" href="sitebooking.html">訂單管理</a>
+                                    <a class="nav-link" href="place_submit.jsp">場地上架</a> <a
+									class="nav-link" href="placebooking_management.jsp">場地管理</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseRestaurant" aria-expanded="false" aria-controls="collapseRestaurant">
@@ -223,9 +225,10 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">返回</button>
-                                <button type="button" class="btn btn-primary">
-                                    <a class="backlogin" href="login.html">登出</a>
-                                </button>
+                                <form method="post" action="<%=request.getContextPath()%>/employee/EmployeeLogout">
+							<input type="submit" class="btn btn-primary" value="登出">
+							</button>
+								</form>
                             </div>
                         </div>
                     </div>

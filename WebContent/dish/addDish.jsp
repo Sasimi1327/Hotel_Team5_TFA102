@@ -4,15 +4,15 @@
 <%@ page import="web.dish.vo.*"%>
 
 <%
-//	response.setHeader("Cache-Control","no-store"); //HTTP 1.1
-//	response.setHeader("Pragma","no-cache"); //HTTP 1.0
-//	response.setDateHeader ("Expires", 0);
+	response.setHeader("Cache-Control","no-store"); //HTTP 1.1
+	response.setHeader("Pragma","no-cache"); //HTTP 1.0
+	response.setDateHeader ("Expires", 0);
 
-//	Object obj =session.getAttribute("empVO");
-//	if(obj==null){
-//		response.sendRedirect(request.getContextPath()+"/employee/login.jsp");
-//		return;
-//	}
+	Object obj =session.getAttribute("empVO");
+	if(obj==null){
+		response.sendRedirect(request.getContextPath()+"/employee/login.jsp");
+		return;
+	}
 
 	Dish dishVO = (Dish) request.getAttribute("dishVO");
 %>
@@ -150,9 +150,9 @@ div button a.backlogin {
                         <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne"
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                            	<a class="nav-link" href="employee_data.jsp">個人資料</a>
-                                <a class="nav-link" href="employee_changedata.jsp">個人資料修改</a>
-                                <a class="nav-link" href="employee_management.jsp">員工管理</a>
+                            	<a class="nav-link" href="<%=request.getContextPath()%>/employee/employee_data.jsp">個人資料</a>
+                                <a class="nav-link" href="<%=request.getContextPath()%>/employee/employee_changedata.jsp">個人資料修改</a>
+                                <a class="nav-link" href="<%=request.getContextPath()%>/employee/employee_management.jsp">員工管理</a>
                             </nav>
                         </div>
 						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
@@ -261,9 +261,10 @@ div button a.backlogin {
 						<div class="back modal-footer">
 							<button type="button" class="btn btn-secondary"
 								data-bs-dismiss="modal">返回</button>
-							<button type="button" class="btn btn-primary">
-								<a class="backlogin" href="login.html">登出</a>
+							<form method="post" action="<%=request.getContextPath()%>/employee/EmployeeLogout">
+							<input type="submit" class="btn btn-primary" value="登出">
 							</button>
+								</form>
 						</div>
 					</div>
 				</div>
