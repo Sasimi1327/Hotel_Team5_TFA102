@@ -24,7 +24,5 @@
 		<servlet-name>EmployeeServlet</servlet-name>
 		<url-pattern>/employee/employee.do</url-pattern>
 	</servlet-mapping>
-	
-	
 
 </web-app>
