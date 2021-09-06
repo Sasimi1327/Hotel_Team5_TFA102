@@ -111,7 +111,7 @@ public class MemberServlet extends HttpServlet {
 				if (!errorMsgs.isEmpty()) {
 					req.setAttribute("memberVO", memberVO); // 含有輸入格式錯誤的empVO物件,也存入req
 					RequestDispatcher failureView = req
-							.getRequestDispatcher("/MemberCreateAccount.jsp");
+							.getRequestDispatcher("/member/MemberCreateAccount.jsp");
 					failureView.forward(req, res);
 					return;
 				}
@@ -121,7 +121,7 @@ public class MemberServlet extends HttpServlet {
 				memSvc.addMember(name, idNumber, phone, email, password);
 				
 				/***************************3.新增完成,準備轉交(Send the Success view)***********/		
-				RequestDispatcher successView = req.getRequestDispatcher("/loginTest1.jsp"); 
+				RequestDispatcher successView = req.getRequestDispatcher("/member/loginTest1.jsp"); 
 				successView.forward(req, res);			
 	
 			

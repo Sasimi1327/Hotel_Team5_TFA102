@@ -147,7 +147,7 @@ div.main2 {
 					<div class="col-lg-7">
 						<div class="card shadow-lg border-0 rounded-lg mt-5">
 							<div class="card-header">
-							<a href="<%=request.getContextPath()%>/FrontPage.jsp">
+							<a href="<%=request.getContextPath()%>/hpbasic/hpbasic.jsp">
 								<img class="logo" src="<%=request.getContextPath()%>/images/logo1.png" alt="">
 								</a>
 								<h3 class="text-center font-weight-light my-4">夢想假期會員註冊頁面</h3>
@@ -254,7 +254,7 @@ div.main2 {
 						</div>
 						<div class="card-footer text-center py-3">
 							<div class="small">
-								<a href="loginTest1.jsp">已經擁有帳號? 點擊這邊回登入頁面</a>
+								<a href="/member/loginTest1.jsp">已經擁有帳號? 點擊這邊回登入頁面</a>
 							</div>
 						</div>
 					</div>

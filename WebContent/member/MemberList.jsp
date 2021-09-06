@@ -12,7 +12,7 @@
 	Object obj =session.getAttribute("memberVO");
 	if(obj==null){
 		
-		response.sendRedirect(request.getContextPath()+"/loginTest1.jsp");
+		response.sendRedirect(request.getContextPath()+"/member/loginTest1.jsp");
 		return;
 	}
 	MemberVO memberVO = (MemberVO) obj;
@@ -204,7 +204,7 @@ div.warning p {
 										</FORM>
 							
 										<input type="hidden" name="updateList" value="updateList" >
-										<a class="col-xl-12 col-md-4 col-lg-3" href="<%=request.getContextPath()+"/MemberUpdate.jsp"%>">
+										<a class="col-xl-12 col-md-4 col-lg-3" href="<%=request.getContextPath()+"/member/MemberUpdate.jsp"%>">
                                         <button type="button" class="btn btn-primary">­×§ï¸ê®Æ</button>
                                     </a>
 

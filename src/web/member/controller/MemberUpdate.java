@@ -93,7 +93,7 @@ public class MemberUpdate extends HttpServlet {
 		
 		if(!errorMsgs.isEmpty()) {
 			req.setAttribute("memberVO", memberVO);
-			String url = "/MemberUpdate.jsp";
+			String url = "/member/MemberUpdate.jsp";
 			RequestDispatcher failView = req.getRequestDispatcher(url);
 			failView.forward(req, res);
 			return;
@@ -103,13 +103,13 @@ public class MemberUpdate extends HttpServlet {
 		memberVO = memsvc.updateMember(memberId, name, idNumber, phone, email, password);
 		
 		req.setAttribute("memberVO", memberVO);
-		RequestDispatcher successView = req.getRequestDispatcher("/loginTest1.jsp");
+		RequestDispatcher successView = req.getRequestDispatcher("/member/loginTest1.jsp");
 		successView.forward(req, res);	
 		
 		  }	catch (Exception e) {
 		errorMsgs.add("修改資料失敗:"+e.getMessage());
 		RequestDispatcher failureView = req
-				.getRequestDispatcher("/Update.jsp");
+				.getRequestDispatcher("/member/Update.jsp");
 		failureView.forward(req, res);
 			return;
 		  }

@@ -227,7 +227,7 @@ div.warning p {
 							<div class="row ">
 								<div class="row justify-content-center">
 									<a class="col-5 col-md-4 col-lg-3"
-										href="<%=request.getContextPath() + "/Member/MemberList.jsp"%>">
+										href="<%=request.getContextPath() + "/member/MemberList.jsp"%>">
 										<button type="button" class="btn btn-secondary">返回</button>
 									</a> <a class="col-5 col-md-4 col-lg-3" href="#"
 										data-bs-toggle="modal" data-bs-target="#change">

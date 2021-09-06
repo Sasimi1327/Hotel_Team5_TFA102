@@ -208,7 +208,7 @@ div.main2 {
 										<div
 											class="d-flex align-items-center justify-content-between mt-4 mb-0">
 											<a class="small" style="font-size:"
-												5px;" href="<%=request.getContextPath()%>/ForgetPassword.jsp">忘記密碼?</a>
+												5px;" href="<%=request.getContextPath()%>/member/ForgetPassword.jsp">忘記密碼?</a>
 											<input type="hidden" name="action" value="login"> <input
 												class="btn btn-primary form-control hotelLogin"
 												type="submit" value="登入">

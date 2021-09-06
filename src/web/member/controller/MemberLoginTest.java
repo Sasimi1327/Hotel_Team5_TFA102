@@ -66,7 +66,7 @@ public class MemberLoginTest extends HttpServlet {
 				
 				if (!errorMsgs.isEmpty()) {
 					RequestDispatcher failureView = req
-							.getRequestDispatcher("/loginTest1.jsp");
+							.getRequestDispatcher("/member/loginTest1.jsp");
 					failureView.forward(req,res);
 					return;
 				}
@@ -83,7 +83,7 @@ public class MemberLoginTest extends HttpServlet {
 				         }
 				       }catch (Exception ignored) { }
 					
-				      res.sendRedirect(req.getContextPath()+"/MemberList.jsp");
+				      res.sendRedirect(req.getContextPath()+"/member/MemberList.jsp");
 				
 				
 //			HttpSession session = req.getSession();
@@ -95,7 +95,7 @@ public class MemberLoginTest extends HttpServlet {
 			}catch (Exception e){
 				errorMsgs.add("±b¸¹±K½X¿ù»~");
 				RequestDispatcher failureView = req
-						.getRequestDispatcher("/loginTest1.jsp");
+						.getRequestDispatcher("/member/loginTest1.jsp");
 				failureView.forward(req,res);
 				return;
 			}

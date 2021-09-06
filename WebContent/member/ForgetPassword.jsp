@@ -177,7 +177,7 @@ div.main2 {
 									<div
 										class="d-flex align-items-center justify-content-between mt-4 mb-0">
 										<a class="small"
-											href="<%=request.getContextPath()%>/loginTest1.jsp">返回登入頁面</a>
+											href="<%=request.getContextPath()%>/member/loginTest1.jsp">返回登入頁面</a>
 										<button type="button" class="btn btn-primary"
 											data-bs-toggle="modal" data-bs-target="#exampleModal">
 											重設密碼</button>

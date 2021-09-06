@@ -85,7 +85,7 @@ public class MailServlet extends HttpServlet {
         
         if (!errorMsgs.isEmpty()) {
 			RequestDispatcher failureView = req
-					.getRequestDispatcher("/ForgetPassword.jsp");
+					.getRequestDispatcher("/member/ForgetPassword.jsp");
 			failureView.forward(req, res);
 			return;//程式中斷
 		};
@@ -98,7 +98,7 @@ public class MailServlet extends HttpServlet {
          
         if (!errorMsgs.isEmpty()) {
 			RequestDispatcher failureView = req
-					.getRequestDispatcher("/ForgetPassword.jsp");
+					.getRequestDispatcher("/member/ForgetPassword.jsp");
 			failureView.forward(req, res);
 			return;//程式中斷
 		};
@@ -130,7 +130,7 @@ public class MailServlet extends HttpServlet {
 		
 		//創建成功 網頁導入登入畫面
 				RequestDispatcher failureView = req
-						.getRequestDispatcher("/login.jsp");
+						.getRequestDispatcher("/member/loginTest1.jsp");
 				failureView.forward(req, res);
 		
 	}
