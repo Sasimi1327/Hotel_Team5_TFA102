@@ -80,6 +80,9 @@ public class empCreateServlet extends HttpServlet {
 					errorMsgs.add("密碼:只能數字和英文,且長度必須是6到20");
 				}
 				String confirm_password = req.getParameter("confirm_password");
+				if(confirm_password==null||confirm_password.trim().length()==0) {
+					errorMsgs.add("確認密碼:請勿空白");
+				}
 				if(!confirm_password.equals(password)) {
 					errorMsgs.add("請確認您輸入的確認密碼與密碼是否一致");
 				}
