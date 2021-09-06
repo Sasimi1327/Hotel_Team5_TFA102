@@ -418,8 +418,9 @@ div.main2 {
 		<div class="topmenu col-auto">
 			<ul id="menu-1">
 				<span class="member">會員專區</span>
-				<li><a href="memberlogin.html">會員登入</a></li>
-				<li><a href="membercreataccount.html">註冊會員</a></li>
+				<li><a href="<%=request.getContextPath()%>/member/loginTest1.jsp">會員登入</a></li>
+             	<li><a href="<%=request.getContextPath()%>/member/MemberCreateAccount.jsp">註冊會員</a></li>
+                <li><a href="<%=request.getContextPath()%>/member/MemberList.jsp">會員資料</a></li>
 				<!-- <li><a href="memberpassword.html">忘記密碼</a></li> -->
 			</ul>
 		</div>
@@ -439,23 +440,23 @@ div.main2 {
 		<div class="topmenu  col-auto">
 			<ul id="menu-4">
 				<span class="restaurant">線上訂餐</span>
-				<li><a href="dishMain.jsp">線上預約</a></li>
-				<li><a href="dishmenu-1.jsp">菜色樣式</a></li>
+				<li><a href="<%=request.getContextPath()%>/dish/dishMain.jsp">線上預約</a></li>
+				<li><a href="<%=request.getContextPath()%>/dish/dishmenu-1.jsp">菜色樣式</a></li>
 			</ul>
 		</div>
 		<div class="topmenu  col-auto">
 			<ul id="menu-5">
 				<span class="map">周邊導覽</span>
-				<li><a href="map.html">交通指南</a></li>
-				<li><a href="fontoneday.html">周邊景點</a></li>
-				<li><a href="fontoneday.html">一日景點</a></li>
+				<li><a href="<%=request.getContextPath()%>/map/map.html">交通指南</a></li>
+                <li><a href="<%=request.getContextPath()%>/nearby/nearby.jsp">周邊景點</a></li>
+                <li><a href="<%=request.getContextPath()%>/oneday/Oneday.html">一日景點</a></li>
 			</ul>
 		</div>
 		<div class="topmenu  col-auto">
 			<ul id="menu-6">
 				<span class="faq">客戶服務</span>
-				<li><a href="">聯絡我們</a></li>
-				<li><a href="faq.html">FAQ</a></li>
+				<li><a href="<%=request.getContextPath()%>/mail/mail.html">聯絡我們</a></li>
+                <li><a href="<%=request.getContextPath()%>/faq/FAQ.html">FAQ</a></li>
 			</ul>
 		</div>
 	</div>
