@@ -1,4 +1,4 @@
-package member;
+package web.member;
 
 public class Verification {
 	
