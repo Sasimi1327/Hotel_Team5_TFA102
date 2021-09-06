@@ -398,7 +398,7 @@
                         <div class="card-body">
                             <h4 class="card-title">加入會員，享有獨家優惠</h4>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="<%=request.getContextPath()%>/nearby/register.jsp" class="btn btn-primary">瞭解更多</a>
+                            <a href="<%=request.getContextPath()%>/member/MemberCreateAccount.jsp" class="btn btn-primary">瞭解更多</a>
                         </div>
                     </div>
                 </div>
@@ -454,7 +454,7 @@
                     <div class="card col-6" style="width: 24rem;">
                         <img src="img/event.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">婚宴活動，最佳首選</h5>
+                            <h5 class="card-title">休閒度假，最佳首選</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="sitebookingmain.html" class="btn btn-primary">瞭解更多</a>
                         </div>
