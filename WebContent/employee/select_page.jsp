@@ -182,7 +182,7 @@ div button a.backlogin {
 				</div>
 				<div class="sb-sidenav-footer">
 					<div class="small">Logged in as:</div>
-					<%=empVO.getEmp_name()%>
+					DreamHoliday Team5
 				</div>
 			</nav>
 		</div>

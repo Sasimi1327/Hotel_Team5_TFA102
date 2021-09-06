@@ -17,8 +17,6 @@
 	}
 	EmployeeVO empVO = (EmployeeVO) obj;
 	session.setAttribute("empVO", empVO);
-	
-	
 %>
 <%
 	EmployeeService empSvc = new EmployeeService();
@@ -367,19 +365,13 @@ div button a.backlogin {
 							</footer>
 							</div>
 							</div>
-							<script
-								src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+							<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 								crossorigin="anonymous"></script>
-							<script
-								src="<%=request.getContextPath()%>/employee/js/scripts.js"></script>
-							<script
-								src="<%=request.getContextPath()%>/employee/js/jquery-3.6.0.min.js"></script>
-							<script
-								src="<%=request.getContextPath()%>/employee/datetimepicker/jquery.js"></script>
-							<script
-								src="<%=request.getContextPath()%>/employee/datetimepicker/jquery.datetimepicker.full.js"></script>
-							<link rel="stylesheet" type="text/css"
-								href="<%=request.getContextPath()%>/employee/datetimepicker/jquery.datetimepicker.css" />
+							<script src="<%=request.getContextPath()%>/employee/js/scripts.js"></script>
+							<script src="<%=request.getContextPath()%>/employee/js/jquery-3.6.0.min.js"></script>
+							<script src="<%=request.getContextPath()%>/employee/datetimepicker/jquery.js"></script>
+							<script src="<%=request.getContextPath()%>/employee/datetimepicker/jquery.datetimepicker.full.js"></script>
+							<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/employee/datetimepicker/jquery.datetimepicker.css" />
 							<script>
 		$(window).on("load", function() {
 			
@@ -389,8 +381,8 @@ div button a.backlogin {
 		 	       timepicker:false,       //timepicker:true,
 		 	       step: 1,                //step: 60 (這是timepicker的預設間隔60分鐘)
 		 	       format:'Y-m-d',         //format:'Y-m-d H:i:s',
-		 		   value: '<%=empVO.getHiredate()%>
-								', // value:   new Date(),
+		 		   value: '<%=empVO.getHiredate()%>'
+// 								', // value:   new Date(),
 									//disabledDates:        ['2017/06/08','2017/06/09','2017/06/10'], // 去除特定不含
 									//startDate:	            '2017/07/10',  // 起始日
 									//minDate:               '-1970-01-01', // 去除今日(不含)之前

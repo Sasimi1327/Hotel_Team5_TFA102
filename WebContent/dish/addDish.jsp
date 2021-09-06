@@ -213,8 +213,8 @@ div button a.backlogin {
 						<div class="collapse" id="collapseView"
 							aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
 							<nav class="sb-sidenav-menu-nested nav">
-								<a class="nav-link" href="<%=request.getContextPath()%>/nearby/nearbymanage.jsp">周邊景點</a>
-								<a class="nav-link" href="<%=request.getContextPath()%>/oneday/onedaymanage.html">一日景點</a>
+								<a class="nav-link" href="res_submit.jsp">周邊景點</a> 
+								<a class="nav-link" href="resbooking_management.jsp">一日景點</a>
 							</nav>
 						</div>
 						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
@@ -242,14 +242,11 @@ div button a.backlogin {
 			</nav>
 		</div>
 		<div id="layoutSidenav_content">
-			<main>
+			<!-- <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">歡迎使用夢想假期飯店後台管理系統</h1>
-                    <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">DreamHoliday Admin</li>
-                    </ol>                   
+                    <h2 class="mt-4">訂房作業 - 訂單管理</h2>
                 </div>
-            </main>
+            </main> -->
 			<!-- Modal -->
 			<div class="modal fade" id="logout" tabindex="-1"
 				aria-labelledby="logoutLabel" aria-hidden="true">
