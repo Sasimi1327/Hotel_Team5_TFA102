@@ -299,7 +299,6 @@ div button a.backlogin {
 						<tr>
 							<td>
 								 <h4>所有座位列表 - listAllSeat.jsp</h4>
-								 <h4><a href="listAllSeat.jsp">回首頁</a></h4>
 							</td>
 						</tr>
 					</table>

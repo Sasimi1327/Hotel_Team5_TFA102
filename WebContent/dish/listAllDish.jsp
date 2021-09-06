@@ -302,7 +302,6 @@ div button a.backlogin {
 						<tr>
 							<td>
 								 <h4>所有菜色列表 - listAllDish.jsp</h4>
-								 <h4><a href="listAllDish.jsp">回首頁</a></h4>
 							</td>
 						</tr>
 					</table>
