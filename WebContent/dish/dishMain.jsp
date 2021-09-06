@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="Big5"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@ page import="web.member.vo.*"%>
 <%
 
 		response.setHeader("Cache-Control","no-store"); //HTTP 1.1
@@ -13,7 +13,8 @@
 			response.sendRedirect(request.getContextPath()+"/member/loginTest1.jsp");
 			return;
 		}
-
+		
+		MemberVO memberVO = (MemberVO) obj;
 %>
 
 <!DOCTYPE html>
@@ -618,7 +619,7 @@ div.main2 {
 
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal"
-						onclick="javascript:location.href='<%=request.getContextPath()%>/member/MemberList.jsp'">½T»{</button>
+						onclick="javascript:location.href='<%=request.getContextPath()%>/hpbasic/hpbasic.jsp'">½T»{</button>
 				</div>
 			</div>
 		</div>
@@ -751,7 +752,7 @@ div.main2 {
 	
 	      if (sendFlag) {
 	        let bookingParam = {
-	          memberId: 1011,
+	          memberId: <%=memberVO.getMemberId()%>,
 	          whichTime: whichTime,
 	          peopleNum: peopleNum,
 	          whichDate: whichDate,
@@ -786,7 +787,7 @@ div.main2 {
 		$(function() {
 			let disabledDate = [ '2021-8-20', '2021-8-23', '2021-8-30' ];
 			var max_Date = new Date();
-			max_Date.setDate(max_Date.getDate() + 7);
+			max_Date.setDate(max_Date.getDate() + 6);
 			$("#datetimepicker1").datetimepicker({
 				format : "YYYY-MM-DD",
 				minDate : new Date(),

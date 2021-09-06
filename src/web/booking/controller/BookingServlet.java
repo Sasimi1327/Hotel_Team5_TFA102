@@ -107,59 +107,6 @@ public class BookingServlet extends HttpServlet {
 			out.print("error");
 			out.flush();
 		}
-		/***************************1.接收請求參數****************************************/
-	
-		//test add booking
-//		BookingInfo info = new BookingInfo();
-//		info.setSeatCode("A007");
-//		info.setMemberId(1011);
-//
-////		info.setMealDate(java.sql.Date.valueOf("2021-07-25"));
-//		info.setMealDate(transferCalendarToSqlDate(2021, Calendar.AUGUST, 6));
-//		info.setMealTime(0);
-//		info.setBookingStatus(3);
-//		info.setPayBill(0);
-//		info.setBookingSeattype(6);
-		
-		//test update booking
-//		BookingInfo info = new BookingInfo();
-//		info.setMealId(23);
-//		info.setSeatCode("A008");
-//		info.setMemberId(1011);
-//		info.setMealDate(transferCalendarToSqlDate(2021, Calendar.AUGUST, 7));
-//		info.setMealTime(2);
-//		info.setBookingStatus(4);
-//		info.setPayBill(20000);
-//		info.setBookingSeattype(4);
-
-//		BookingInfoService service;
-//		
-//		try {
-//			service = new BookingInfoServiceImpl();
-//			boolean result = service.addBooking(info);
-//			boolean result = service.updateBooking(info);
-//			boolean result = service.deleteBooking(new Integer(23));
-//			res.getWriter().append(result+"");
-			
-			//select one
-//			BookingInfo info = service.getBookingByKey(new Integer(7));
-//			if(info != null) {
-//				res.getWriter().append(info.toString());
-//			}
-			
-			//select all
-//			StringBuilder sb = new StringBuilder();
-//			List<BookingInfo> list = service.getAll();
-//			Consumer<BookingInfo> bookingConsumer = p -> {
-//				sb.append(p.toString());
-//				sb.append("<br>");
-//			};
-//			list.stream().forEach(bookingConsumer);
-//			res.getWriter().append(sb);
-			
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
 	}
 	
 	private java.sql.Date transferCalendarToSqlDate(int year, int month, int day) {
