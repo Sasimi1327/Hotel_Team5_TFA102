@@ -14,7 +14,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>夢想假期會員註冊頁面 - DreamHoliday</title>
+<title>夢想假期管理員註冊頁面 - DreamHoliday</title>
 <link href="<%=request.getContextPath()%>/employee/css/styles.css"
 	rel="stylesheet" />
 <script

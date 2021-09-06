@@ -60,7 +60,7 @@ div.text-muted {
 										<a href="<%=request.getContextPath()%>/home/hpbasic.jsp">
                                        		 <img class="logo" src="<%=request.getContextPath()%>/images/logo1.png" alt="">
                                         </a>
-                                <h3 class="text-center font-weight-light my-4">內部員工重設密碼</h3>
+                                <h3 class="text-center font-weight-light my-4">管理員重設密碼</h3>
                             </div>
                             <div class="card-body">
                                 <div class="small mb-3 text-muted-mail">
