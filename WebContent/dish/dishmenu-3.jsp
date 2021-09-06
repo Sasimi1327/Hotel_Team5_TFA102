@@ -536,7 +536,7 @@ div.main2 {
 		<div class="row justify-content-center">
 				
 				<c:forEach var="dishVO" items="${list}" >
-					<c:if test="${dishVO.dishType == 2}">
+					<c:if test="${dishVO.dishType == 2 && dishVO.dishStatus == 1}">
 						<div class="card col-12 col-md-4" style="width: 18rem;">
 							<img src="DBPicReader?dishId=${dishVO.dishId}" class="card-img-top" alt="...">
 							<div class="card-body">
