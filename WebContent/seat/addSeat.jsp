@@ -10,6 +10,7 @@
 
 	Object obj =session.getAttribute("empVO");
 	if(obj==null){
+		request.getSession().setAttribute("location", "/Hotel_Team5_TFA102/seat/listAllSeat.jsp");
 		response.sendRedirect(request.getContextPath()+"/employee/login.jsp");
 		return;
 	}

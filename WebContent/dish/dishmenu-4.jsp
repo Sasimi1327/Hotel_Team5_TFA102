@@ -527,7 +527,7 @@ div.main2 {
 		</div>
 	</div>
 	<div class="photo container">
-		<div class="row justify-content-between">
+		<div class="row justify-content-center">
 			
 			<c:forEach var="dishVO" items="${list}" >
 					<c:if test="${dishVO.dishType == 3}">

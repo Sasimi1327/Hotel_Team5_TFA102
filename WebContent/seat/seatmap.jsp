@@ -17,6 +17,7 @@
 
 	Object obj =session.getAttribute("empVO");
 	if(obj==null){
+		request.getSession().setAttribute("location", request.getRequestURI());
 		response.sendRedirect(request.getContextPath()+"/employee/login.jsp");
 		return;
 	}

@@ -124,7 +124,7 @@ public class SeatServlet extends HttpServlet {
 				
 				Integer seatType = new Integer(req.getParameter("seatType").trim());
 				Integer seatStatus = new Integer(req.getParameter("seatStatus").trim());
-				
+				System.out.println("seatType:"+seatType+",seatStatus:"+seatStatus);
 				Seat seatVO = new Seat();
 				seatVO.setSeatCode(seatCode);
 				seatVO.setSeatType(seatType);
