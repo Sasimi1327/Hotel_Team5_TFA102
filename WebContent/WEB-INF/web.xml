@@ -24,5 +24,33 @@
 		<servlet-name>EmployeeServlet</servlet-name>
 		<url-pattern>/employee/employee.do</url-pattern>
 	</servlet-mapping>
+	
+	 <servlet>
+		<servlet-name>DBGifReader</servlet-name>
+		<servlet-class>web.oneday.controller.DBGifReader</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DBGifReader</servlet-name>
+		<url-pattern>/DBGifReader</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>NEARBYReader</servlet-name>
+		<servlet-class>web.nearby.controller.NEARBYReader</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>NEARBYReader</servlet-name>
+		<url-pattern>/NEARBYReader</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>NearbyupdateServlet</servlet-name>
+		<servlet-class>web.nearby.controller.NearbyupdateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>NearbyupdateServlet</servlet-name>
+		<url-pattern>/NearbyupdateServlet</url-pattern>
+	</servlet-mapping>
 
 </web-app>
