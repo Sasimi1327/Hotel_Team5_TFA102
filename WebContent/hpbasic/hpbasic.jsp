@@ -413,12 +413,12 @@
                     <img class="card col-10 col-lg-5" src="<%=request.getContextPath()%>/images/travel2.jpg" alt="">
                 </div>
                 <div class="row justify-content-center">
-                    <img class="card col-10 col-lg-5" src="<%=request.getContextPath()%>/images/event.png" alt="">
+                    <img class="card col-10 col-lg-5" src="<%=request.getContextPath()%>/images/room-1.jpg" alt="">
                     <div class="card" style="width: 24rem;">
                         <div class="card-body">
-                            <h4 class="card-title">婚宴活動，最佳首選</h4>
+                            <h4 class="card-title">休閒度假，最佳首選</h4>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="sitebookingmain.html" class="btn btn-primary">瞭解更多</a>
+                            <a href="http://localhost:8081/Photo_Sphere3DViewer/Room_Sphere3DView.html" class="btn btn-primary">瞭解更多</a>
                         </div>
                     </div>
                 </div>

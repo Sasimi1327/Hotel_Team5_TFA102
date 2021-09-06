@@ -19,14 +19,25 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
 	crossorigin="anonymous"></script>
 <style>
+/* table#table-1 { */
+/* 	background-color: #CCCCFF; */
+/* 	border: 2px solid black; */
+/* 	text-align: center; */
+/* } */
+
+/* table#table-1 h4 { */
+/* 	color: red; */
+/* 	display: block; */
+/* 	margin-bottom: 1px; */
+/* } */
 table#table-1 {
-	background-color: #CCCCFF;
+	background-image: linear-gradient(#0AA6B7, #2B3078);
 	border: 2px solid black;
 	text-align: center;
 }
 
-table#table-1 h4 {
-	color: red;
+table#table-1 h3 {
+	color: white;
 	display: block;
 	margin-bottom: 1px;
 }
