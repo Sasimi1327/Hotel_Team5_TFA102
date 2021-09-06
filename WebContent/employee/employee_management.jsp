@@ -10,10 +10,9 @@ response.setDateHeader ("Expires", 0);
 
 Object obj =session.getAttribute("empVO");
 if(obj==null){
- 
- response.sendRedirect(request.getContextPath()+"/employee/login.jsp");
- return;
- 
+	request.getSession().setAttribute("location", request.getRequestURI());
+	response.sendRedirect(request.getContextPath()+"/employee/login.jsp");
+	return;
 }
 EmployeeVO empVO = (EmployeeVO) obj;
 session.setAttribute("empVO", empVO);
@@ -177,9 +176,9 @@ div button a.backlogin {
 						<div class="collapse" id="collapseRestaurant"
 							aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
 							<nav class="sb-sidenav-menu-nested nav">
-							<a class="nav-link" href="<%=request.getContextPath()%>/dish/listAllDish.jsp">菜餚管理</a>
-<a class="nav-link" href="<%=request.getContextPath()%>/seat/listAllSeat.jsp">座位管理</a>
-<a class="nav-link" href="<%=request.getContextPath()%>/seat/seatmap.jsp">餐廳平面圖</a>
+								<a class="nav-link" href="res_submit.jsp">菜餚管理</a> 
+								<a class="nav-link" href="resbooking_management.jsp">座位管理</a>
+								<a class="nav-link" href="resbooking_management.jsp">餐廳平面圖</a>
 									
 							</nav>
 						</div>
@@ -218,7 +217,7 @@ div button a.backlogin {
 				</div>
 				<div class="sb-sidenav-footer">
 					<div class="small">Logged in as:</div>
-					DreamHoliday Team5
+					<%=empVO.getEmp_name()%>
 				</div>
 			</nav>
 		</div>
