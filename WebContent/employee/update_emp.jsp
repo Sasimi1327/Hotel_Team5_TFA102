@@ -1,25 +1,29 @@
+<%@page import="java.util.List"%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="Big5"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="web.employee.vo.*"%>
+<%@ page import="web.employee.service.*"%>
 <%
-response.setHeader("Cache-Control","no-store"); //HTTP 1.1
-response.setHeader("Pragma","no-cache");        //HTTP 1.0
-response.setDateHeader ("Expires", 0);
+	response.setHeader("Cache-Control", "no-store"); //HTTP 1.1
+	response.setHeader("Pragma", "no-cache"); //HTTP 1.0
+	response.setDateHeader("Expires", 0);
 
- 
-Object obj =session.getAttribute("empVO");
-if(obj==null){
- 
- response.sendRedirect(request.getContextPath()+"/employee/login.jsp");
- return;
- 
-}
-EmployeeVO empVO = (EmployeeVO) obj;
-session.setAttribute("empVO", empVO);
+	Object obj = session.getAttribute("empVO");
+	if (obj == null) {
+
+		response.sendRedirect(request.getContextPath() + "/employee/login.jsp");
+		return;
+
+	}
+	EmployeeVO empVO = (EmployeeVO) obj;
+	session.setAttribute("empVO", empVO);
 %>
-<%-- <% --%>
-//   EmployeeVO empVO = (EmployeeVO) request.getAttribute("empVO"); 
-<%-- %> --%>
+<%
+	EmployeeService empSvc = new EmployeeService();
+	List<EmployeeVO> list = empSvc.getAll();
+	pageContext.setAttribute("list", list);
+%>
+
 <html>
 <head>
 <meta charset="utf-8" />
@@ -29,9 +33,14 @@ session.setAttribute("empVO", empVO);
 <meta name="description" content="" />
 <meta name="author" content="" />
 <title>後台系統 - 訂房頁面 - DreamHoliday Admin</title>
-<link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-<link href="<%=request.getContextPath()%>/employee/css/styles.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
+	rel="stylesheet" />
+<link href="<%=request.getContextPath()%>/employee/css/styles.css"
+	rel="stylesheet" />
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+	crossorigin="anonymous"></script>
 <style>
 table#table-1 {
 	background-color: #CCCCFF;
@@ -50,25 +59,13 @@ h4 {
 	display: inline;
 }
 
-table {
-	width: 100%;
-	background-color: white;
-	margin-top: 5px;
-	margin-bottom: 5px;
-}
-
 nav button#sidebarToggle {
 	position: absolute;
 	right: 10px;
 }
 
-/* .wrapper { */
-/* 	min-height: 100%; */
-/* 	margin-bottom: -68.8px; */
-/* } */
-
 .content {
- 	width: 100%; 
+	width: 100%;
 	position: relative;
 	padding-bottom: 68.8px;
 }
@@ -89,7 +86,7 @@ div.text-muted {
 }
 
 .bk {
-	height: 10px;
+	height: -5px;
 }
 
 .ccle {
@@ -113,19 +110,26 @@ div button a.backlogin {
 	text-decoration: none;
 	color: white;
 }
+
+.content {
+	width: 100%;
+	position: relative;
+	padding-bottom: 68.8px;
+}
+
+.box4 {
+	height: 20px;
+}
 </style>
 </head>
 
 <body class="sb-nav-fixed">
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-		
 		<a class="navbar-brand ps-3" href="#"><i class="fas fa-user fa-fw"></i>管理人員介面</a>
-		
 		<button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
 			id="sidebarToggle" href="#!">
 			<i class="fas fa-bars"></i>
 		</button>
-		
 		<form
 			class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
 			<div class="input-group"></div>
@@ -148,9 +152,9 @@ div button a.backlogin {
 						<div class="collapse" id="collapseLayouts2"
 							aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
 							<nav class="sb-sidenav-menu-nested nav">
-								<a class="nav-link" href="roomsubmit.html">個人資料</a> 
-								 <a class="nav-link" href="employee_changedata.jsp">個人資料修改</a> 
-								<a class="nav-link" href="#">員工管理</a>
+								<a class="nav-link" href="employee_data.jsp">個人資料</a> <a
+									class="nav-link" href="employee_changedata.jsp">個人資料修改</a> <a
+									class="nav-link" href="#">員工管理</a>
 							</nav>
 						</div>
 						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
@@ -182,7 +186,6 @@ div button a.backlogin {
 								id="sidenavAccordionPages">
 								<a class="nav-link" href="placebooking_management.jsp">場地上架</a>
 								<a class="nav-link" href="#">場地管理</a>
-							
 							</nav>
 						</div>
 						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
@@ -199,7 +202,7 @@ div button a.backlogin {
 								<a class="nav-link" href="<%=request.getContextPath()%>/dish/listAllDish.jsp">菜餚管理</a>
 <a class="nav-link" href="<%=request.getContextPath()%>/seat/listAllSeat.jsp">座位管理</a>
 <a class="nav-link" href="<%=request.getContextPath()%>/seat/seatmap.jsp">餐廳平面圖</a>
-									
+
 							</nav>
 						</div>
 						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
@@ -213,8 +216,10 @@ div button a.backlogin {
 						<div class="collapse" id="collapseView"
 							aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
 							<nav class="sb-sidenav-menu-nested nav">
-								<a class="nav-link" href="<%=request.getContextPath()%>/nearby/nearbymanage.jsp">周邊景點</a>
-                                    <a class="nav-link" href="<%=request.getContextPath()%>/oneday/onedaymanage.html">一日景點</a>
+								<a class="nav-link"
+									href="<%=request.getContextPath()%>/nearby/nearbymanage.jsp">周邊景點</a>
+								<a class="nav-link"
+									href="<%=request.getContextPath()%>/oneday/onedaymanage.html">一日景點</a>
 							</nav>
 						</div>
 
@@ -238,7 +243,7 @@ div button a.backlogin {
 				</div>
 				<div class="sb-sidenav-footer">
 					<div class="small">Logged in as:</div>
-					<%=empVO.getEmp_name()%>
+					DreamHoliday Team5
 				</div>
 			</nav>
 		</div>
@@ -257,10 +262,11 @@ div button a.backlogin {
 						<div class="back modal-footer">
 							<button type="button" class="btn btn-secondary"
 								data-bs-dismiss="modal">返回</button>
-								<form method="post" action="<%=request.getContextPath()%>/employee/EmployeeLogout">
-							<input type="submit" class="btn btn-primary" value="登出">
-							</button>
-								</form>
+							<form method="post"
+								action="<%=request.getContextPath()%>/employee/EmployeeLogout">
+								<input type="submit" class="btn btn-primary" value="登出">
+								</button>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -277,91 +283,96 @@ div button a.backlogin {
 					</div>
 
 					<div class='box1'>
-						
-	
-<!-- </table> -->
+						<table class="table table-striped table-hover">
+							<div class="box4">
+								<h3>資料修改:</h3>
 
-<h3>資料修改:</h3>
+								<%-- 錯誤表列 --%>
+								<c:if test="${not empty errorMsgs}">
+									<font style="color: red">請修正以下錯誤:</font>
+									<ul>
+										<c:forEach var="message" items="${errorMsgs}">
+											<li style="color: red">${message}</li>
+										</c:forEach>
+									</ul>
+								</c:if>
 
-<%-- 錯誤表列 --%>
-<c:if test="${not empty errorMsgs}">
-	<font style="color:red">請修正以下錯誤:</font>
-	<ul>
-		<c:forEach var="message" items="${errorMsgs}">
-			<li style="color:red">${message}</li>
-		</c:forEach>
-	</ul>
-</c:if>
+								<FORM METHOD="post" ACTION="employee.do" name="form1">
+									<table class="table table-striped table-hover">
+										<tr>
+											<td>員工編號:<font color=red><b>*</b></font></td>
+											<td><%=empVO.getEmp_id()%></td>
+										</tr>
 
-<FORM METHOD="post" ACTION="employee.do" name="form1">
-<table class="table table-striped table-hover">
-	<tr>
-		<td>員工編號:<font color=red><b>*</b></font></td>
-		<td><%=empVO.getEmp_id()%></td>
-	</tr>
+										<tr>
+											<td>員工名字:</td>
+											<td><input type="TEXT" name="emp_name" size="45"
+												value="<%=empVO.getEmp_name()%>" /></td>
+										</tr>
 
-	<tr>
-		<td>員工名字:</td>
-		<td><input type="TEXT" name="emp_name" size="45" value="<%=empVO.getEmp_name()%>" /></td>
-	</tr>
-	
-	<tr>
-		<td>身分證字號:</td>
-		<td><input type="TEXT" name="id_number" size="45" value="<%=empVO.getId_number()%>" /></td>
-	</tr>
-	
-	<tr>
-		<td>員工電話:</td>
-		<td><input type="TEXT" name="emp_phone" size="45" value="<%=empVO.getEmp_phone()%>" /></td>
-	</tr>
-	
-	<tr>
-		<td>員工信箱:</td>
-		<td><input type="TEXT" name="emp_mail" size="45" value="<%=empVO.getEmp_mail()%>" /></td>
-	</tr>
-	
-	<tr>
-		<td>員工帳密:</td>
-		<td><input type="TEXT" name="password" size="45" value="<%=empVO.getPassword()%>" /></td>
-	</tr>
-	
-	<tr>
-		<td>員工到職日:</td>
-		<td><input name="hiredate" id="f_date1" type="text" readonly></td>
-	</tr>
-	<input type="hidden" name="action" value="update">
-<input type="hidden" name="emp_id" value="<%=empVO.getEmp_id()%>">
-<!-- <input type="submit" value="送出修改"> -->
-<button type="submit" class="btn btn-outline-dark">送出修改</button>
-</table>
-<br>
-</FORM>
+										<tr>
+											<td>身分證字號:</td>
+											<td><input type="TEXT" name="id_number" size="45"
+												value="<%=empVO.getId_number()%>" /></td>
+										</tr>
 
-					</div>
+										<tr>
+											<td>員工電話:</td>
+											<td><input type="TEXT" name="emp_phone" size="45"
+												value="<%=empVO.getEmp_phone()%>" /></td>
+										</tr>
+
+										<tr>
+											<td>員工信箱:</td>
+											<td><input type="TEXT" name="emp_mail" size="45"
+												value="<%=empVO.getEmp_mail()%>" /></td>
+										</tr>
+
+										<tr>
+											<td>員工帳密:</td>
+											<td><input type="TEXT" name="password" size="45"
+												value="<%=empVO.getPassword()%>" /></td>
+										</tr>
+
+										<tr>
+											<td>員工到職日:</td>
+											<td><input name="hiredate" id="f_date1" type="text"
+												readonly></td>
+										</tr>
+										<input type="hidden" name="action" value="update">
+										<input type="hidden" name="emp_id"
+											value="<%=empVO.getEmp_id()%>">
+										<button type="submit" class="btn btn-outline-dark">送出修改</button>
+									</table>
+									<br>
+								</FORM>
+
+							</div>
 
 
-				</div>
-
-			</div>
-		</div>
-	</div>
-	<footer class="py-4 bg-dark mt-auto">
-		<div class="container-fluid px-4">
-			<div class="d-flex align-items-center justify-content-between small">
-				<div class="text-muted">Copyright &copy; DreamHoliday Team5
-					Website 2021</div>
-			</div>
-		</div>
-	</footer>
-	</div>
-	</div>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-	<script src="<%=request.getContextPath()%>/employee/js/scripts.js"></script>
-	<script src="<%=request.getContextPath()%>/employee/js/jquery-3.6.0.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/employee/datetimepicker/jquery.datetimepicker.css" />
-	<script src="<%=request.getContextPath()%>/employee/datetimepicker/jquery.js"></script>
-	<script src="<%=request.getContextPath()%>/employee/datetimepicker/jquery.datetimepicker.full.js"></script>
-	<script>
+							</div>
+							</div>
+							</div>
+							</div>
+							<footer class="py-4 bg-dark mt-auto">
+								<div class="container-fluid px-4">
+									<div
+										class="d-flex align-items-center justify-content-between small">
+										<div class="text-muted">Copyright &copy; DreamHoliday
+											Team5 Website 2021</div>
+									</div>
+								</div>
+							</footer>
+							</div>
+							</div>
+							<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+								crossorigin="anonymous"></script>
+							<script src="<%=request.getContextPath()%>/employee/js/scripts.js"></script>
+							<script src="<%=request.getContextPath()%>/employee/js/jquery-3.6.0.min.js"></script>
+							<script src="<%=request.getContextPath()%>/employee/datetimepicker/jquery.js"></script>
+							<script src="<%=request.getContextPath()%>/employee/datetimepicker/jquery.datetimepicker.full.js"></script>
+							<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/employee/datetimepicker/jquery.datetimepicker.css" />
+							<script>
 		$(window).on("load", function() {
 			
 			  $.datetimepicker.setLocale('zh');
@@ -370,15 +381,16 @@ div button a.backlogin {
 		 	       timepicker:false,       //timepicker:true,
 		 	       step: 1,                //step: 60 (這是timepicker的預設間隔60分鐘)
 		 	       format:'Y-m-d',         //format:'Y-m-d H:i:s',
-		 		   value: '<%=empVO.getHiredate()%>', // value:   new Date(),
-		           //disabledDates:        ['2017/06/08','2017/06/09','2017/06/10'], // 去除特定不含
-		           //startDate:	            '2017/07/10',  // 起始日
-		           //minDate:               '-1970-01-01', // 去除今日(不含)之前
-		           //maxDate:               '+1970-01-01'  // 去除今日(不含)之後
-		        });
+		 		   value: '<%=empVO.getHiredate()%>'
+// 								', // value:   new Date(),
+									//disabledDates:        ['2017/06/08','2017/06/09','2017/06/10'], // 去除特定不含
+									//startDate:	            '2017/07/10',  // 起始日
+									//minDate:               '-1970-01-01', // 去除今日(不含)之前
+									//maxDate:               '+1970-01-01'  // 去除今日(不含)之後
+									});
 
-			
-		})
-	</script>
+								})
+								
+							</script>
 </body>
 </html>

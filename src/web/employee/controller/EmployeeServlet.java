@@ -47,7 +47,7 @@ public class EmployeeServlet extends HttpServlet {
 								
 				/***************************3.查詢完成,準備轉交(Send the Success view)************/
 				req.setAttribute("empVO", empVO);         // 資料庫取出的empVO物件,存入req
-				String url = "/employee/update_emp2.jsp";
+				String url = "/employee/update_emp.jsp";
 				RequestDispatcher successView = req.getRequestDispatcher(url);// 成功轉交 update_emp_input.jsp
 				successView.forward(req, res);
 
@@ -117,7 +117,7 @@ public class EmployeeServlet extends HttpServlet {
 				if (!errorMsgs.isEmpty()) {
 					req.setAttribute("empVO", empVO); // 含有輸入格式錯誤的empVO物件,也存入req
 					RequestDispatcher failureView = req
-							.getRequestDispatcher("/employee/update_emp2.jsp");
+							.getRequestDispatcher("/employee/update_emp.jsp");
 					failureView.forward(req, res);
 					return; //程式中斷
 				}
@@ -136,7 +136,7 @@ public class EmployeeServlet extends HttpServlet {
 			} catch (Exception e) {
 				errorMsgs.add("修改資料失敗:"+e.getMessage());
 				RequestDispatcher failureView = req
-						.getRequestDispatcher("/management/update_emp2.jsp");
+						.getRequestDispatcher("/employee/update_emp.jsp");
 				failureView.forward(req, res);
 			}
 		}
