@@ -1,99 +1,144 @@
 package web.member.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.JSONObject;
-
-import web.member.service.MemberService;
-import web.member.service.impl.MemberServiceImpl;
+import web.member.service.impl.MemberService;
 import web.member.vo.MemberVO;
 
-
-@WebServlet("/member/MemberServlet")
+@MultipartConfig
+@WebServlet("/MemberServlet")
 public class MemberServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		doPost(req, res);
-	}
 
-	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		req.setCharacterEncoding("UTF-8");
+		
 		res.setContentType("text/html;charset=UTF-8");
-		res.addHeader("Access-Control-Allow-Origin", "*");
-		PrintWriter out = res.getWriter();
+        //對Post中文參數進行解碼
+        req.setCharacterEncoding("UTF-8");
+        res.addHeader("Access-Control-Allow-Origin", "*");
+        
+		List<String> errorMsgs = new LinkedList<String>();
+		req.setAttribute("errorMsgs", errorMsgs);
 		
-		MemberVO member = new MemberVO();
-		member.setName(req.getParameter("name"));
-		member.setIdNumber(req.getParameter("idNumber"));
-		member.setPhone(req.getParameter("phone"));
-		member.setEmail(req.getParameter("email"));
+		MemberVO memberVO = new MemberVO();
+		MemberService memSvc = new MemberService();
 		
-		//test add member
-//		Member member = new Member();
-//		member.setName("王曉明");
-//		member.setIdNumber("A123456789");
-//		member.setPhone("0987654321");
-//		member.setEmail("abc@gmail.com");
-//		member.setMemberLevel(102);
-//		member.setMemberPoint(10000);
+		String name = req.getParameter("name");
+		String idNumber = req.getParameter("idNumber");
+		String phone = req.getParameter("phone");
+		String email = req.getParameter("email");
+		String password = req.getParameter("password");
+		String confirmPassword = req.getParameter("confirm_Password");
 		
-		//test update member
-//		Member member = new Member();
-//		member.setMemberId(1016);
-//		member.setName("吳永志2");
-//		member.setIdNumber("A123456789");
-//		member.setPhone("0912345678");
-//		member.setEmail("cba@gmail.com");
-//		member.setMemberLevel(1234);
-//		member.setMemberPoint(20000);
+		String action = req.getParameter("action");
 		
-		MemberService service;
-		try {
-			service = new MemberServiceImpl();
-//			boolean result = service.addMember(member);
-//			boolean result = service.updateMember(member);
-//			boolean result = service.deleteMember(new Integer(1016));
-//			res.getWriter().append(result+"");
-			
-//			if(result) {
+		
+		memberVO = memSvc.findByPrimaryKey(email);
+		//新增會員
+		if("insert".equals(action)) {
+			//錯誤問題
+//			try {
+				String nameReg = "^[(\u4e00-\u9fa5)(a-zA-Z0-9_)]{2,10}$";
+				if(name == null||name.trim().length()==0){
+					errorMsgs.add("姓名:請勿空白");
+				} else if(!name.trim().matches(nameReg)){
+					errorMsgs.add("姓名:只能是中、英文字母、數字和_ , 且長度必需在2到10之間");
+				}
 				
-				String name = "潘翔";
-				String price = "250";
-				HashMap map = new HashMap();
-				map.put("name", name);
-				map.put("price", price);
-				JSONObject resJSONObject = new JSONObject(map);
-		        out.println(resJSONObject);
-//			}
+				
+				
+				
+				String idNumberReg = "[(a-zA-Z0-9_)]{10}$";
+				if(idNumber == null||idNumber.trim().length()==0) {
+					errorMsgs.add("身分證:請勿空白");
+				}else if(!idNumber.trim().matches(idNumberReg)){
+					errorMsgs.add("身分證:只能是數字和英文.且長度必須是10位");
+				}
+				
+				String phoneReg = "^09[0-9]{8}$";
+				if(phone == null||phone.trim().length()==0){
+					errorMsgs.add("電話:請勿空白");
+				}else if(!phone.trim().matches(phoneReg)) {
+					errorMsgs.add("電話:只能數字,且長度必須是10");
+				}
+				
+	if(memberVO!=null)	{		
 			
-			//select one
-//			Member member = service.getMemberByKey(new Integer(1014));
-//			if(member != null) {
-//				res.getWriter().append(member.toString());
-//			}
-			
-			//select all
-//			StringBuilder sb = new StringBuilder();
-//			List<Member> list = service.getAll();
-//			Consumer<Member> memberConsumer = p -> {
-//				sb.append(p.toString());
-//				sb.append("<br>");
-//			};
-//			list.stream().forEach(memberConsumer);
-//			res.getWriter().append(sb);
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+					 if(memberVO.getEmail().equals(email)) {
+					errorMsgs.add("郵件:有人使用過");
+				}
+	}	else {
+		memberVO = new MemberVO();
+	}	if(email == null ||email.trim().length()==0) {
+		errorMsgs.add("郵件:請勿空白");
+	}	
+	
+				String passwordReg = "[(a-zA-Z0-9_)]{5,19}$";
+				if(password ==null ||password.trim().length()==0) {
+					errorMsgs.add("密碼:請勿空白");
+				}else if(!password.trim().matches(passwordReg)) {
+					errorMsgs.add("密碼:只能數字和英文,且長度必須是6到20");
+				}
+				
+				if(confirmPassword ==null||confirmPassword.trim().length()==0) {
+					errorMsgs.add("確認密碼:不能空白");
+				}else if(!confirmPassword.matches(password)) {
+					errorMsgs.add("確認密碼:密碼不相依");
+				}
+        
+        
 
+	
+				
+				memberVO.setName(name);
+				memberVO.setIdNumber(idNumber);
+				memberVO.setPhone(phone);
+				memberVO.setEmail(email);
+				memberVO.setPassword(password);
+				
+				//格式錯誤返回頁面
+				if (!errorMsgs.isEmpty()) {
+					req.setAttribute("memberVO", memberVO); // 含有輸入格式錯誤的empVO物件,也存入req
+					RequestDispatcher failureView = req
+							.getRequestDispatcher("/MemberCreateAccount.jsp");
+					failureView.forward(req, res);
+					return;
+				}
+				
+				/***************************2.開始新增資料***************************************/
+			
+				memSvc.addMember(name, idNumber, phone, email, password);
+				
+				/***************************3.新增完成,準備轉交(Send the Success view)***********/		
+				RequestDispatcher successView = req.getRequestDispatcher("/loginTest1.jsp"); 
+				successView.forward(req, res);			
+	
+			
+			} 
+//		catch (Exception e) {
+//				errorMsgs.add(e.getMessage());
+//				RequestDispatcher failureView = req
+//						.getRequestDispatcher("/member/MemberCreateAccount.jsp");
+//				failureView.forward(req,res);
+//				return;
+//			}
+//		}		
+			
+	} 
+//	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+//		
+//	}
+	
 }
+
