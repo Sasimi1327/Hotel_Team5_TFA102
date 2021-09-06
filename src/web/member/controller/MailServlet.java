@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import member.Verification;
+import web.member.Verification;
 import web.member.service.impl.MailService;
 import web.member.service.impl.MemberService;
 import web.member.vo.MemberVO;
