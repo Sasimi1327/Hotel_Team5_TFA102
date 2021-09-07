@@ -191,7 +191,7 @@ div.main2 {
 															data-bs-dismiss="modal" aria-label="Close"></button>
 													</div>
 													<div class="modal-body">
-														系統已發送連結網址至您的信箱,請勿關閉此視窗,傳送完畢會自動跳轉</div>
+														確認資料正確無誤後,請勿關閉此視窗,傳送完畢會自動跳轉</div>
 													<div class="modal-footer">
 														<button type="button" class="btn btn-secondary"
 															data-bs-dismiss="modal">關閉</button>

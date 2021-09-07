@@ -254,7 +254,7 @@ div.main2 {
 						</div>
 						<div class="card-footer text-center py-3">
 							<div class="small">
-								<a href="/member/loginTest1.jsp">已經擁有帳號? 點擊這邊回登入頁面</a>
+								<a href="<%=request.getContextPath()%>/member/loginTest1.jsp">已經擁有帳號? 點擊這邊回登入頁面</a>
 							</div>
 						</div>
 					</div>
