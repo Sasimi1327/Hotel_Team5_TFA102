@@ -731,7 +731,7 @@ div.main2 {
 	        sendFlag = false;
 	        alert("請選擇時段");
 	      } else {
-	        alert("時段:" + whichTime);
+// 	        alert("時段:" + whichTime);
 	      }
 	
 	      var peopleNum = $("#people-selecter").val();
@@ -739,7 +739,7 @@ div.main2 {
 	        sendFlag = false;
 	        alert("請選擇人數");
 	      } else {
-	        alert("人數:" + peopleNum);
+// 	        alert("人數:" + peopleNum);
 	      }
 	
 	      var whichDate = $("#showPickDate").val();
@@ -747,7 +747,7 @@ div.main2 {
 	        sendFlag = false;
 	        alert("請選擇日期");
 	      } else {
-	        alert("日期:" + whichDate);
+// 	        alert("日期:" + whichDate);
 	      }
 	
 	      if (sendFlag) {

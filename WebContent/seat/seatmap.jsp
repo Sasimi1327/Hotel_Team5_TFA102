@@ -299,7 +299,7 @@
 				$('.dropdown-menu li a').on('click', function(){
 					let item_id = $(this).closest("div").attr("data-id");
 					let select_value = $(this).attr("data-status");
-					alert("item_id: "+item_id+", select_value: "+select_value);
+// 					alert("item_id: "+item_id+", select_value: "+select_value);
 					
 					let select_meal_id = $("select[name='book_member_list']").val();
 					$("select[name='book_member_list'] option").prop('selected', function() {
