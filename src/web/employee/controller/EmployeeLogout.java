@@ -30,7 +30,7 @@ public class EmployeeLogout extends HttpServlet {
     	session.removeAttribute("empVO");
     	session.removeAttribute("location");
     	
-    	String url ="http://localhost:8081/Hotel_Team5_TFA102/employee/login.jsp";    
+    	String url =req.getContextPath()+"/employee/login.jsp";    
     	res.sendRedirect(url);
     
 	}
