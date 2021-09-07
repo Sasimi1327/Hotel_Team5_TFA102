@@ -56,7 +56,7 @@ public class EMPLOYEEPassWord extends HttpServlet {
         }
         
         if(id_number.equals(null)||id_number.equals("")) {
-        	errorMsgs.add("請輸入密碼");
+        	errorMsgs.add("請輸入身分證字號");
         }
         
         
