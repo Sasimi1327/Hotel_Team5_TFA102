@@ -95,7 +95,7 @@ div.text-muted {
 								<img class="logo"
 									src="<%=request.getContextPath()%>/images/logo1.png" alt="">
 								</a>
-								<h3 class="text-center font-weight-light my-4">夢想假期會員註冊頁面</h3>
+								<h3 class="text-center font-weight-light my-4">夢想假期後台管理員註冊頁面</h3>
 								<%-- 錯誤表列 --%>
 								<c:if test="${not empty errorMsgs}">
 									<font style="color: red">請修正以下錯誤:</font>

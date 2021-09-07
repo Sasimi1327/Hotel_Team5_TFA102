@@ -58,7 +58,7 @@ public class MailServlet extends HttpServlet {
         }
         
         if(idNumber.equals(null)||idNumber.equals("")) {
-        	errorMsgs.add("請輸入密碼");
+        	errorMsgs.add("請輸入身分證字號");
         }
         
         
