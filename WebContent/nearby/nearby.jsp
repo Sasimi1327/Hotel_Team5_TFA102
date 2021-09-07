@@ -382,9 +382,9 @@
                 <div class="topmenu col-auto">                          
                     <ul id="menu-1">
                         <span class="member">會員專區</span> 
-                        <li><a href="<%=request.getContextPath()%>/DH_backsystem/login.jsp">會員登入</a></li>
-                        <li><a href="<%=request.getContextPath()%>/DH_backsystem/register.jsp">註冊會員</a></li>
-                         <li><a href="<%=request.getContextPath()%>/DH_backsystem/memberdata.jsp">會員資料</a></li>
+                        	 <li><a href="<%=request.getContextPath()%>/member/loginTest1.jsp">會員登入</a></li>
+               				 <li><a href="<%=request.getContextPath()%>/member/MemberCreateAccount.jsp">註冊會員</a></li>
+                         	 <li><a href="<%=request.getContextPath()%>/member/MemberList.jsp">會員資料</a></li>
                         <!-- <li><a href="memberpassword.html">忘記密碼</a></li> -->
                     </ul>       
                 </div>       
