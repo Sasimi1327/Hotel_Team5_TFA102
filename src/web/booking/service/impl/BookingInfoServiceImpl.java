@@ -63,7 +63,6 @@ public class BookingInfoServiceImpl implements BookingInfoService {
 		boolean seatAvailable = false;
 
 		if(dSeat == null) { //表示根本沒有值，尚未建立，進行初始化
-//			isSelectDailyExist = dao.initDailyBooking(java.sql.Date.valueOf("2021-02-28"));
 			isDailyTableExist = dao.initDailyBooking(info.getMealDate()); //建立成功會改為false
 			seatAvailable = isDailyTableExist; //建表成功，當然有位置可選
 		} else { //有該日期，可以取值
@@ -106,7 +105,6 @@ public class BookingInfoServiceImpl implements BookingInfoService {
 				
 				//2. 座位總覽對應的座位數加1
 				String newBookSeat = queryCondition(bookNumber, peopleNum);
-//				int result = dao.setDailyBooking(java.sql.Date.valueOf("2021-02-28"), bookTime, newBookSeat);
 				int result2 = dao.setDailyBooking(info.getMealDate(), bookTime, newBookSeat);
 				return (result1>0) && (result2>0);
 			} catch (Exception e) {
@@ -201,7 +199,7 @@ public class BookingInfoServiceImpl implements BookingInfoService {
 		
 		if(timeZone > 0) {
 //			return dao.getBookMemberInTime(mealDate, timeZone);
-			return dao.getBookMemberInTime(java.sql.Date.valueOf("2021-08-27"), 2);
+			return dao.getBookMemberInTime(java.sql.Date.valueOf("2021-09-07"), 2);
 		} 
 		return null;
 	}
