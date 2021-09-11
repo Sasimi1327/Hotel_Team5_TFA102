@@ -55,6 +55,11 @@ h4 {
 	color: blue;
 	display: inline;
 }
+.content {
+	width: 100%;
+	position: relative;
+	padding-bottom: 68.8px;
+}
 
 nav button#sidebarToggle {
 	position: absolute;
@@ -72,7 +77,7 @@ div.text-muted {
 
 #del_btn {
 	position: relative;
-	/* right: 10%; */
+	/ right: 10%; /
 }
 
 .bk {
@@ -132,6 +137,7 @@ div button a.backlogin {
                                 <a class="nav-link" href="employee_data.jsp">個人資料</a>
                                 <a class="nav-link" href="employee_changedata.jsp">個人資料修改</a>
                                 <a class="nav-link" href="#">員工管理</a>
+                                
                             </nav>
                         </div>
 						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
@@ -254,6 +260,12 @@ div button a.backlogin {
 						</div>
 						<div class='dm'>夢想假期員工管理系統</div>
 					</div>
+					<FORM METHOD="post" ACTION="<%=request.getContextPath() %>/employee/employee.do" >
+        <b>請輸入想查詢之員工編號 (如8001):</b>
+        <input type="text" name="emp_id">
+        <input type="hidden" name="action" value="getOne_For_Display">
+        <input type="submit" value="送出">
+    </FORM>
 					
 							<div class='box1'>
 								<table class="table table-striped table-hover">

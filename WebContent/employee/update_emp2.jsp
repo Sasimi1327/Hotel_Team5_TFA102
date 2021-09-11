@@ -3,27 +3,29 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="web.employee.vo.*"%>
 <%@ page import="web.employee.service.*"%>
-<%
-	response.setHeader("Cache-Control", "no-store"); //HTTP 1.1
-	response.setHeader("Pragma", "no-cache"); //HTTP 1.0
-	response.setDateHeader("Expires", 0);
+<%-- <% --%>
+// 	response.setHeader("Cache-Control", "no-store"); //HTTP 1.1
+// 	response.setHeader("Pragma", "no-cache"); //HTTP 1.0
+// 	response.setDateHeader("Expires", 0);
 
-	Object obj = session.getAttribute("empVO");
-	if (obj == null) {
+// 	Object obj = session.getAttribute("empVO");
+// 	if (obj == null) {
 
-		response.sendRedirect(request.getContextPath() + "/employee/login.jsp");
-		return;
+// 		response.sendRedirect(request.getContextPath() + "/employee/login.jsp");
+// 		return;
 
-	}
-	EmployeeVO empVO = (EmployeeVO) obj;
-	session.setAttribute("empVO", empVO);
-%>
+// 	}
+// 	EmployeeVO empVO = (EmployeeVO) obj;
+// 	session.setAttribute("empVO", empVO);
+<%-- %> --%>
 <%
 	EmployeeService empSvc = new EmployeeService();
 	List<EmployeeVO> list = empSvc.getAll();
 	pageContext.setAttribute("list", list);
 %>
-
+<%
+	EmployeeVO empVO = (EmployeeVO) request.getAttribute("empVO");
+%>
 <html>
 <head>
 <meta charset="utf-8" />

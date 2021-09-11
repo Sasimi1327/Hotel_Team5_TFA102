@@ -94,7 +94,7 @@ div.text-muted {
 										</div>
 										<div class="d-flex align-items-center justify-content-between mt-4 mb-0">
 											<a class="small" href="employeepassword.jsp">忘記密碼?</a> 
-											<a class="small" href="EmployeeCreateAccount.jsp">新增管理員</a>
+											<a class="small" href="EmployeeCreateAccount.jsp">新增員工</a>
 											<input class="btn btn-primary form-control btn_yes" type="submit"value="登入"> 
 											<input type="hidden" name="action" value="login">
 										</div>
