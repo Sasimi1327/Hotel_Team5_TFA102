@@ -121,7 +121,7 @@ public class EMPLOYEEPassWord extends HttpServlet {
 			java.sql.Date hiredate = empVO.getHiredate();
 //			
 //			
-			empsvce.updateEmp(emp_name, id_number, emp_phone, emp_mail, password, hiredate, emp_id);
+			empsvce.updateEmp(emp_name, id_number, emp_phone, emp_mail, password.trim(), hiredate, emp_id);
 			
 			EMPLOYEEMailService tomail = new EMPLOYEEMailService();
 			tomail.sendMail(emp_mail, subject, messageText);
