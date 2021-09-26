@@ -85,7 +85,7 @@ public class EmployeeServlet2 extends HttpServlet {
 				
 				if (locationPath != null) {
 					locationPath = (locationPath.length() == 0) ? req.getContextPath() : locationPath;
-					
+					req.getSession().removeAttribute(locationPath);
 					res.sendRedirect(res.encodeRedirectURL(locationPath));
 					System.out.println("locationPath"+locationPath);
 					return;

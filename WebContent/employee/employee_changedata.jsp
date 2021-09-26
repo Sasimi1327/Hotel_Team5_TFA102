@@ -11,12 +11,12 @@ response.setDateHeader ("Expires", 0);
 EmployeeVO empVO = (EmployeeVO) session.getAttribute("empVO");
 
 
-if(empVO==null){
-	request.getSession().setAttribute("location", request.getRequestURI());
-	String url = "/employee/login.jsp";
-	RequestDispatcher successView = request.getRequestDispatcher(url); 
-	successView.forward(request, response);
-}
+// if(empVO==null){
+// 	request.getSession().setAttribute("location", request.getRequestURI());
+// 	String url = "/employee/login.jsp";
+// 	RequestDispatcher successView = request.getRequestDispatcher(url); 
+// 	successView.forward(request, response);
+// }
 
 %>
 <html>

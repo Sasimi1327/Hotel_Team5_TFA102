@@ -52,5 +52,19 @@
 		<servlet-name>NearbyupdateServlet</servlet-name>
 		<url-pattern>/NearbyupdateServlet</url-pattern>
 	</servlet-mapping>
-
+	<filter>
+		<filter-name>Filter</filter-name>
+		<filter-class>filters.Filter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>Filter</filter-name>
+		<url-pattern>/employee/employee_management.jsp</url-pattern>
+		<url-pattern>/employee/employee_changedata.jsp</url-pattern>
+		<url-pattern>/employee/employee_data.jsp</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+		<dispatcher>ERROR</dispatcher>
+		<dispatcher>ASYNC</dispatcher>
+	</filter-mapping>
 </web-app>

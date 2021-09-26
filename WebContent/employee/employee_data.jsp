@@ -9,15 +9,15 @@
 	response.setDateHeader ("Expires", 0);
 	
 	 
-	Object obj =session.getAttribute("empVO");
-	if(obj==null){
-	request.getSession().setAttribute("location", request.getRequestURI());
-	 response.sendRedirect(request.getContextPath()+"/employee/login.jsp");
-	 return;
+// 	Object obj =session.getAttribute("empVO");
+// 	if(obj==null){
+// 	request.getSession().setAttribute("location", request.getRequestURI());
+// 	 response.sendRedirect(request.getContextPath()+"/employee/login.jsp");
+// 	 return;
 	 
-	}
-	EmployeeVO empVO = (EmployeeVO) obj;
-	session.setAttribute("empVO", empVO);
+// 	}
+// 	EmployeeVO empVO = (EmployeeVO) obj;
+// 	session.setAttribute("empVO", empVO);
 %>
 
 <html>

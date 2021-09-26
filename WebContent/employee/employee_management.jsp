@@ -8,14 +8,14 @@ response.setHeader("Cache-Control","no-store"); //HTTP 1.1
 response.setHeader("Pragma","no-cache");        //HTTP 1.0
 response.setDateHeader ("Expires", 0);
 
-Object obj =session.getAttribute("empVO");
-if(obj==null){
-	request.getSession().setAttribute("location", request.getRequestURI());
-	response.sendRedirect(request.getContextPath()+"/employee/login.jsp");
-	return;
-}
-EmployeeVO empVO = (EmployeeVO) obj;
-session.setAttribute("empVO", empVO);
+// Object obj =session.getAttribute("empVO");
+// if(obj==null){
+// 	request.getSession().setAttribute("location", request.getRequestURI());
+// 	response.sendRedirect(request.getContextPath()+"/employee/login.jsp");
+// 	return;
+// }
+// EmployeeVO empVO = (EmployeeVO) obj;
+// session.setAttribute("empVO", empVO);
 %>
 <%
 	EmployeeService empSvc = new EmployeeService();
